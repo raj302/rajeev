@@ -199,3 +199,31 @@ app.post('/glowfanoff', function(req, res)
  
 
 
+//functionality for led1 starts here
+
+app.post('/glowled1', function(req, res)
+{
+  console.log("glowbulb on is called");
+  //console.log(req.body);
+  PythonShell.run('led1on.py', function (err, results) {
+  if (err) throw err;
+  // results is an array consisting of messages collected during execution
+  console.log("finished executing python script");
+  console.log(results);
+});
+res.json("done");
+});
+
+app.post('/led1off', function(req, res)
+{
+  console.log("glowbulb off is called");
+  //console.log(req.body);
+  PythonShell.run('led1off.py', function (err, results) {
+  if (err) throw err;
+  // results is an array consisting of messages collected during execution
+  console.log("finished executing python script");
+  console.log(results);
+});
+res.json("done");
+});
+

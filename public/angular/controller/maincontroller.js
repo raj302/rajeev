@@ -480,7 +480,7 @@ $scope.flickerled1on = function()
 }
 $scope.flickerled1off = function()
 {
-  $http.post('/flickerled2off').success(function(response){
+  $http.post('/flickerled1off').success(function(response){
          console.log(response);
        });
 }

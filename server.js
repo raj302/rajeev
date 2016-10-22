@@ -226,4 +226,33 @@ app.post('/led1off', function(req, res)
 });
 res.json("done");
 });
+app.post('/flickerled1on', function(req, res)
+{
+  console.log("glowbulb off is called");
+  //console.log(req.body);
+  PythonShell.run('flickerled1.py', function (err, results) {
+  if (err) throw err;
+  // results is an array consisting of messages collected during execution
+  console.log("finished executing python script");
+  console.log(results);
+});
+res.json("done");
+});
+app.post('/flickerled1off', function(req, res)
+{
+  console.log("glowbulb off is called");
+  //console.log(req.body);
+  PythonShell.run('flickerled1.py', function (err, results) {
+  if (err) throw err;
+  // results is an array consisting of messages collected during execution
+  console.log("finished executing python script");
+  console.log(results);
+});
+res.json("done");
+});
 
+//functionality for led1 stops here
+
+//functionality for led2 starts here
+
+//functionality for led2 stops here
